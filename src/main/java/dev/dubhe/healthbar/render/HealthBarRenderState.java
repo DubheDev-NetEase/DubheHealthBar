@@ -1,4 +1,4 @@
-package dev.dubhe.healthbar.mixin;
+package dev.dubhe.healthbar.render;
 
 import dev.dubhe.healthbar.HealthBarKind;
 
