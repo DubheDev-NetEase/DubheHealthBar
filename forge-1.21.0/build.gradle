@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '7.0.40'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "${mod_id}-forge-${minecraft_version}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(java_version as int)
+
+repositories {
+    maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://libraries.minecraft.net/' }
+    mavenCentral()
+    minecraft.mavenizer(delegate)
+}
+
+minecraft {
+    dependency "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    mappings channel: 'official', version: minecraft_version
+}
+
+dependencies {
+    implementation(minecraft.dependency.asProvider().get())
+}
+
+
+var replaceProperties = [
+        minecraft_version      : minecraft_version,
+        minecraft_version_range: minecraft_version_range,
+        forge_version          : forge_version,
+        forge_version_range    : forge_version_range,
+        mod_id                 : mod_id,
+        mod_name               : mod_name,
+        mod_license            : mod_license,
+        mod_version            : mod_version,
+        mod_group_id           : mod_group_id,
+        mod_authors            : mod_authors,
+        mod_description        : mod_description
+]
+
+tasks.withType(ProcessResources).configureEach {
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(Jar).configureEach {
+    archiveFileName = "${mod_id}-${version}-mc${minecraft_version}.jar"
+    manifest {
+        attributes([
+                'Specification-Title'     : mod_name,
+                'Specification-Vendor'    : mod_authors,
+                'Specification-Version'   : '1',
+                'Implementation-Title'    : mod_name,
+                'Implementation-Version'  : version,
+                'Implementation-Vendor'   : mod_authors,
+                'MixinConfigs'            : 'dubhe_health_bar.mixins.json'
+        ])
+    }
+}

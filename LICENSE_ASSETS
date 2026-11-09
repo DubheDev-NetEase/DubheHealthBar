@@ -1,0 +1,17 @@
+Copyright (c) 2026 Gugle
+
+All rights reserved.
+
+The resource files of this project, including but not limited to textures,
+models, sounds, shaders, language files and other artistic assets, are
+licensed under the All Rights Reserved (ARR) terms. No permission is granted
+to copy, modify, distribute, sublicense or use these resource files in any
+form without prior written permission from the copyright holder.
+
+The Java source code of this project is licensed under the GNU Lesser
+General Public License v3.0 only. See the LICENSE file in the project root.
+
+The shader source files are part of the artistic resource files and are
+covered by the All Rights Reserved terms above. They may be read for
+learning purposes, but may not be copied into other projects without
+permission.
