@@ -1,5 +1,6 @@
 package dev.dubhe.healthbar.mixin;
 
+import dev.dubhe.healthbar.render.HealthBarRenderState;
 import dev.dubhe.healthbar.HealthBarKind;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import org.spongepowered.asm.mixin.Mixin;
