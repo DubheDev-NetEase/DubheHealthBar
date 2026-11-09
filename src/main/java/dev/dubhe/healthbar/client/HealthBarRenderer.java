@@ -67,7 +67,7 @@ public final class HealthBarRenderer {
         vertex(consumer, matrix, -halfWidth, halfHeight, fillAlpha, barColor);
         vertex(consumer, matrix, halfWidth, halfHeight, fillAlpha, barColor);
         vertex(consumer, matrix, halfWidth, -halfHeight, fillAlpha, barColor);
-        font.drawInBatch(text, halfWidth + HealthBarStyle.TEXT_GAP, -4.0F, HealthBarStyle.TEXT_COLOR, true, matrix,
+        font.drawInBatch(text, halfWidth + HealthBarStyle.TEXT_GAP, -4.0F, HealthBarStyle.TEXT_COLOR, false, matrix,
                 event.getMultiBufferSource(), Font.DisplayMode.NORMAL, 0, LightTexture.FULL_BRIGHT);
         poseStack.popPose();
     }
