@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import dev.dubhe.healthbar.HealthBarKind;
-import dev.dubhe.healthbar.mixin.HealthBarRenderState;
+import dev.dubhe.healthbar.render.HealthBarRenderState;
 import dev.dubhe.healthbar.render.HealthBarRenderTypes;
 import dev.dubhe.healthbar.render.HealthBarStyle;
 import net.minecraft.client.Camera;
@@ -90,7 +90,7 @@ public final class HealthBarRenderer {
                 left + HealthBarStyle.BAR_WIDTH + HealthBarStyle.TEXT_GAP,
                 HealthBarStyle.TEXT_TOP,
                 HealthBarStyle.TEXT_COLOR,
-                true,
+                false,
                 matrix,
                 bufferSource,
                 Font.DisplayMode.NORMAL,
