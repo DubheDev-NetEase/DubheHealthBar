@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.png" width="96" alt="Dubhe Health Bar 图标">
+</p>
+
 # Dubhe Health Bar
 
 纯客户端 Minecraft 血条模组，本分支对应 Forge 1.21。
